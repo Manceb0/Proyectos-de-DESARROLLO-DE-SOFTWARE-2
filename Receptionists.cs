@@ -27,7 +27,7 @@ namespace WindowsFormsApp2
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if(RNameTb.Text == "" || RPassword.Text == "" || RAddressTb.Text == "")
+            if(RNameTb.Text == "" || RPassword.Text == "" || RPhoneTb.Text == "" || RAddressTb.Text == "")
             {
                 MessageBox.Show("Missing Information");
 
@@ -36,13 +36,13 @@ namespace WindowsFormsApp2
                 try
                 {
                     Con.Open();
-                    /*SqlCommand cmd = new SqlCommand("insert into ReceptionistTbl(RecepId,RecepName,Recepphone,RecepAdd,RecepPass)values(@RN,@RP,@RA,@RPA)", Con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ReceptionistTbl(RecepName,Recepphone,RecepAdd,RecepPass)values(@RN,@RP,@RA,@RPA)", Con);
                     cmd.Parameters.AddWithValue("@RN", RNameTb.Text);
                     cmd.Parameters.AddWithValue("@RP", RPhoneTb.Text);
                     cmd.Parameters.AddWithValue("@RA", RAddressTb.Text);
                     cmd.Parameters.AddWithValue("@RPA", RPassword.Text);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Receptionist Added");*/
+                    MessageBox.Show("Receptionist Added");
                     Con.Close();
 
                 }catch(Exception Ex)

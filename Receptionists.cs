@@ -23,7 +23,32 @@ namespace WindowsFormsApp2
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Yuli.YULIMANUEL\Documents\ClinicDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void DelBtn_Click(object sender, EventArgs e)
         {
+            if (Key == 0 )
+            {
+                MessageBox.Show("Select the costumer ");
 
+            }
+            else
+            {
+                try
+                {
+                    Con.Open();                                                                                     //INSERT INTO
+                    SqlCommand cmd = new SqlCommand("DELETE FROM ReceptionistTbl where RecepId=@RKey", Con);
+                    
+                    cmd.Parameters.AddWithValue("@RKey", Key);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Receptionist Deleted");
+                    Con.Close();
+                    DisplayRec();
+                    Clear();
+
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
         private void DisplayRec()
@@ -57,6 +82,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Receptionist Added");
                     Con.Close();
                     DisplayRec();
+                    Clear();
 
                 }catch(Exception Ex)
                 {
@@ -109,13 +135,26 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Receptionist Updated");
                     Con.Close();
                     DisplayRec();
-
+                    Clear();
                 }
                 catch (Exception Ex)
                 {
                     MessageBox.Show(Ex.Message);
                 }
             }
+        }
+        private void Clear()
+        {
+            RNameTb.Text = "";
+            RPassword.Text = "";
+            RPhoneTb.Text = "";
+            RAddressTb.Text = "";
+            Key = 0;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

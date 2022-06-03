@@ -30,8 +30,11 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doctors));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.DocExpTb = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -44,25 +47,25 @@ namespace WindowsFormsApp2
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.DocPassWordTb = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.DelBtn = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.DocSpecCb = new System.Windows.Forms.ComboBox();
+            this.DocPhoneTb = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DocAddTb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DOcDOB = new System.Windows.Forms.DateTimePicker();
+            this.DocGenCb = new System.Windows.Forms.ComboBox();
+            this.DNameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DoctorsDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -70,8 +73,8 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -82,17 +85,17 @@ namespace WindowsFormsApp2
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(1014, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 26);
+            this.label2.Size = new System.Drawing.Size(110, 26);
             this.label2.TabIndex = 79;
-            this.label2.Text = "Experiencia";
+            this.label2.Text = "Password";
             // 
-            // textBox4
+            // DocExpTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(1019, 176);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 35);
-            this.textBox4.TabIndex = 74;
+            this.DocExpTb.Location = new System.Drawing.Point(1019, 176);
+            this.DocExpTb.Multiline = true;
+            this.DocExpTb.Name = "DocExpTb";
+            this.DocExpTb.Size = new System.Drawing.Size(286, 35);
+            this.DocExpTb.TabIndex = 74;
             // 
             // label17
             // 
@@ -223,13 +226,13 @@ namespace WindowsFormsApp2
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
             // 
-            // textBox5
+            // DocPassWordTb
             // 
-            this.textBox5.Location = new System.Drawing.Point(1019, 246);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 35);
-            this.textBox5.TabIndex = 80;
+            this.DocPassWordTb.Location = new System.Drawing.Point(1019, 246);
+            this.DocPassWordTb.Multiline = true;
+            this.DocPassWordTb.Name = "DocPassWordTb";
+            this.DocPassWordTb.Size = new System.Drawing.Size(286, 35);
+            this.DocPassWordTb.TabIndex = 80;
             // 
             // panel1
             // 
@@ -261,70 +264,63 @@ namespace WindowsFormsApp2
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // button3
+            // EditBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.YellowGreen;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(996, 331);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 54);
-            this.button3.TabIndex = 78;
-            this.button3.Text = "Borrar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.EditBtn.ForeColor = System.Drawing.Color.DimGray;
+            this.EditBtn.Location = new System.Drawing.Point(1019, 334);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(176, 54);
+            this.EditBtn.TabIndex = 78;
+            this.EditBtn.Text = "Borrar";
+            this.EditBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // DelBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(385, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 54);
-            this.button2.TabIndex = 77;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.DelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DelBtn.ForeColor = System.Drawing.Color.White;
+            this.DelBtn.Location = new System.Drawing.Point(385, 334);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(176, 54);
+            this.DelBtn.TabIndex = 77;
+            this.DelBtn.Text = "Borrar";
+            this.DelBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // AddBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(696, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 54);
-            this.button1.TabIndex = 76;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AddBtn.BackColor = System.Drawing.Color.Black;
+            this.AddBtn.ForeColor = System.Drawing.Color.White;
+            this.AddBtn.Location = new System.Drawing.Point(696, 334);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(176, 54);
+            this.AddBtn.TabIndex = 76;
+            this.AddBtn.Text = "Agregar";
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // dataGridView1
+            // DocSpecCb
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(275, 421);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1327, 280);
-            this.dataGridView1.TabIndex = 75;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.DocSpecCb.FormattingEnabled = true;
+            this.DocSpecCb.Items.AddRange(new object[] {
             "Urología",
             "Ginecología",
             "Cardiología",
             "Oftamología",
             "Dermatología",
             "Urología"});
-            this.comboBox2.Location = new System.Drawing.Point(738, 183);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(108, 21);
-            this.comboBox2.TabIndex = 72;
-            this.comboBox2.Text = "Especialización";
+            this.DocSpecCb.Location = new System.Drawing.Point(809, 190);
+            this.DocSpecCb.Name = "DocSpecCb";
+            this.DocSpecCb.Size = new System.Drawing.Size(108, 21);
+            this.DocSpecCb.TabIndex = 72;
+            this.DocSpecCb.Text = "Especialización";
             // 
-            // textBox3
+            // DocPhoneTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(631, 254);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 27);
-            this.textBox3.TabIndex = 71;
+            this.DocPhoneTb.Location = new System.Drawing.Point(631, 254);
+            this.DocPhoneTb.Multiline = true;
+            this.DocPhoneTb.Name = "DocPhoneTb";
+            this.DocPhoneTb.Size = new System.Drawing.Size(286, 27);
+            this.DocPhoneTb.TabIndex = 71;
             // 
             // label16
             // 
@@ -338,13 +334,13 @@ namespace WindowsFormsApp2
             this.label16.TabIndex = 70;
             this.label16.Text = "Telefono";
             // 
-            // textBox2
+            // DocAddTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(1316, 176);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 105);
-            this.textBox2.TabIndex = 69;
+            this.DocAddTb.Location = new System.Drawing.Point(1316, 176);
+            this.DocAddTb.Multiline = true;
+            this.DocAddTb.Name = "DocAddTb";
+            this.DocAddTb.Size = new System.Drawing.Size(260, 105);
+            this.DocAddTb.TabIndex = 69;
             // 
             // label15
             // 
@@ -370,33 +366,33 @@ namespace WindowsFormsApp2
             this.label9.TabIndex = 67;
             this.label9.Text = "Fecha de nacimiento";
             // 
-            // dateTimePicker1
+            // DOcDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(275, 253);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 20);
-            this.dateTimePicker1.TabIndex = 66;
+            this.DOcDOB.Location = new System.Drawing.Point(275, 253);
+            this.DOcDOB.Name = "DOcDOB";
+            this.DOcDOB.Size = new System.Drawing.Size(286, 20);
+            this.DOcDOB.TabIndex = 66;
             // 
-            // comboBox1
+            // DocGenCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.DocGenCb.FormattingEnabled = true;
+            this.DocGenCb.Items.AddRange(new object[] {
             "Hombre ",
             "Mujer",
             "Otro"});
-            this.comboBox1.Location = new System.Drawing.Point(603, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
-            this.comboBox1.TabIndex = 65;
-            this.comboBox1.Text = "Genero";
+            this.DocGenCb.Location = new System.Drawing.Point(631, 190);
+            this.DocGenCb.Name = "DocGenCb";
+            this.DocGenCb.Size = new System.Drawing.Size(108, 21);
+            this.DocGenCb.TabIndex = 65;
+            this.DocGenCb.Text = "Genero";
             // 
-            // textBox1
+            // DNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 184);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 27);
-            this.textBox1.TabIndex = 64;
+            this.DNameTb.Location = new System.Drawing.Point(275, 184);
+            this.DNameTb.Multiline = true;
+            this.DNameTb.Name = "DNameTb";
+            this.DNameTb.Size = new System.Drawing.Size(286, 27);
+            this.DNameTb.TabIndex = 64;
             // 
             // label8
             // 
@@ -427,31 +423,87 @@ namespace WindowsFormsApp2
             this.pictureBox1.TabIndex = 60;
             this.pictureBox1.TabStop = false;
             // 
+            // DoctorsDGV
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DoctorsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DoctorsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DoctorsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DoctorsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DoctorsDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DoctorsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoctorsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DoctorsDGV.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DoctorsDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DoctorsDGV.EnableHeadersVisualStyles = false;
+            this.DoctorsDGV.GridColor = System.Drawing.Color.Black;
+            this.DoctorsDGV.Location = new System.Drawing.Point(275, 474);
+            this.DoctorsDGV.Name = "DoctorsDGV";
+            this.DoctorsDGV.RowHeadersVisible = false;
+            this.DoctorsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DoctorsDGV.Size = new System.Drawing.Size(1301, 228);
+            this.DoctorsDGV.TabIndex = 102;
+            this.DoctorsDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DoctorsDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DoctorsDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DoctorsDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DoctorsDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DoctorsDGV.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DoctorsDGV.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DoctorsDGV.ThemeStyle.HeaderStyle.Height = 25;
+            this.DoctorsDGV.ThemeStyle.ReadOnly = false;
+            this.DoctorsDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DoctorsDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DoctorsDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoctorsDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DoctorsDGV.ThemeStyle.RowsStyle.Height = 22;
+            this.DoctorsDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            this.DoctorsDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // Doctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1610, 714);
+            this.Controls.Add(this.DoctorsDGV);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.DocExpTb);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.DocPassWordTb);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.EditBtn);
+            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.DocSpecCb);
+            this.Controls.Add(this.DocPhoneTb);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DocAddTb);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DOcDOB);
+            this.Controls.Add(this.DocGenCb);
+            this.Controls.Add(this.DNameTb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -466,8 +518,8 @@ namespace WindowsFormsApp2
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoctorsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,7 +528,7 @@ namespace WindowsFormsApp2
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox DocExpTb;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label14;
@@ -489,24 +541,24 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox DocPassWordTb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button EditBtn;
+        private System.Windows.Forms.Button DelBtn;
+        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.ComboBox DocSpecCb;
+        private System.Windows.Forms.TextBox DocPhoneTb;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DocAddTb;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker DOcDOB;
+        private System.Windows.Forms.ComboBox DocGenCb;
+        private System.Windows.Forms.TextBox DNameTb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2DataGridView DoctorsDGV;
     }
 }

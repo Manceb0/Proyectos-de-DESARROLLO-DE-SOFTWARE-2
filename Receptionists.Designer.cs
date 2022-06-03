@@ -30,6 +30,9 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receptionists));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label16 = new System.Windows.Forms.Label();
             this.RAddressTb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -55,8 +58,8 @@ namespace WindowsFormsApp2
             this.EditBtn = new System.Windows.Forms.Button();
             this.DelBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.ReceptionistDGV = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ReceptionistDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -85,7 +88,7 @@ namespace WindowsFormsApp2
             this.RAddressTb.Location = new System.Drawing.Point(1314, 176);
             this.RAddressTb.Multiline = true;
             this.RAddressTb.Name = "RAddressTb";
-            this.RAddressTb.Size = new System.Drawing.Size(286, 105);
+            this.RAddressTb.Size = new System.Drawing.Size(260, 105);
             this.RAddressTb.TabIndex = 91;
             // 
             // label15
@@ -314,6 +317,7 @@ namespace WindowsFormsApp2
             this.EditBtn.TabIndex = 100;
             this.EditBtn.Text = "Editar";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DelBtn
             // 
@@ -339,14 +343,6 @@ namespace WindowsFormsApp2
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // ReceptionistDGV
-            // 
-            this.ReceptionistDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReceptionistDGV.Location = new System.Drawing.Point(273, 421);
-            this.ReceptionistDGV.Name = "ReceptionistDGV";
-            this.ReceptionistDGV.Size = new System.Drawing.Size(1327, 280);
-            this.ReceptionistDGV.TabIndex = 97;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
@@ -355,12 +351,70 @@ namespace WindowsFormsApp2
             this.panel2.Size = new System.Drawing.Size(1430, 10);
             this.panel2.TabIndex = 84;
             // 
+            // ReceptionistDGV
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.ReceptionistDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.ReceptionistDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ReceptionistDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ReceptionistDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReceptionistDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.ReceptionistDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ReceptionistDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.ReceptionistDGV.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReceptionistDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ReceptionistDGV.EnableHeadersVisualStyles = false;
+            this.ReceptionistDGV.GridColor = System.Drawing.Color.Black;
+            this.ReceptionistDGV.Location = new System.Drawing.Point(273, 467);
+            this.ReceptionistDGV.Name = "ReceptionistDGV";
+            this.ReceptionistDGV.RowHeadersVisible = false;
+            this.ReceptionistDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ReceptionistDGV.Size = new System.Drawing.Size(1301, 228);
+            this.ReceptionistDGV.TabIndex = 101;
+            this.ReceptionistDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.ReceptionistDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.ReceptionistDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.ReceptionistDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.ReceptionistDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.ReceptionistDGV.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ReceptionistDGV.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.ReceptionistDGV.ThemeStyle.HeaderStyle.Height = 25;
+            this.ReceptionistDGV.ThemeStyle.ReadOnly = false;
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.Height = 22;
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            this.ReceptionistDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ReceptionistDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ReceptionistDGV_CellContentClick);
+            // 
             // Receptionists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1610, 714);
+            this.Controls.Add(this.ReceptionistDGV);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.RAddressTb);
             this.Controls.Add(this.label15);
@@ -375,7 +429,6 @@ namespace WindowsFormsApp2
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.DelBtn);
             this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.ReceptionistDGV);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Receptionists";
@@ -423,7 +476,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Button DelBtn;
         private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.DataGridView ReceptionistDGV;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2DataGridView ReceptionistDGV;
     }
 }

@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
         {
             if (Key == 0 )
             {
-                MessageBox.Show("Select the costumer ");
+                MessageBox.Show("Select the Recepcionist ");
 
             }
             else

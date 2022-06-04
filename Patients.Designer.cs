@@ -30,6 +30,9 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patients));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -45,22 +48,22 @@ namespace WindowsFormsApp2
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PatNameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.PatGenCb = new System.Windows.Forms.ComboBox();
+            this.PatDOB = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.PatAddTb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PatPhoneTb = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PatHIVCb = new System.Windows.Forms.ComboBox();
+            this.PatAlTb = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.DelBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.PatientsDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -69,7 +72,7 @@ namespace WindowsFormsApp2
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox12
@@ -236,13 +239,13 @@ namespace WindowsFormsApp2
             this.label1.TabIndex = 18;
             this.label1.Text = "Clinica INTEC";
             // 
-            // textBox1
+            // PatNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(287, 209);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 27);
-            this.textBox1.TabIndex = 22;
+            this.PatNameTb.Location = new System.Drawing.Point(287, 209);
+            this.PatNameTb.Multiline = true;
+            this.PatNameTb.Name = "PatNameTb";
+            this.PatNameTb.Size = new System.Drawing.Size(286, 27);
+            this.PatNameTb.TabIndex = 22;
             // 
             // label8
             // 
@@ -256,25 +259,25 @@ namespace WindowsFormsApp2
             this.label8.TabIndex = 21;
             this.label8.Text = "Nombre del paciente";
             // 
-            // comboBox1
+            // PatGenCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.PatGenCb.FormattingEnabled = true;
+            this.PatGenCb.Items.AddRange(new object[] {
             "Hombre ",
             "Mujer",
             "Otro"});
-            this.comboBox1.Location = new System.Drawing.Point(615, 208);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.Text = "Genero";
+            this.PatGenCb.Location = new System.Drawing.Point(615, 208);
+            this.PatGenCb.Name = "PatGenCb";
+            this.PatGenCb.Size = new System.Drawing.Size(108, 21);
+            this.PatGenCb.TabIndex = 23;
+            this.PatGenCb.Text = "Genero";
             // 
-            // dateTimePicker1
+            // PatDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(287, 278);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 20);
-            this.dateTimePicker1.TabIndex = 24;
+            this.PatDOB.Location = new System.Drawing.Point(287, 278);
+            this.PatDOB.Name = "PatDOB";
+            this.PatDOB.Size = new System.Drawing.Size(286, 20);
+            this.PatDOB.TabIndex = 24;
             // 
             // label9
             // 
@@ -288,13 +291,13 @@ namespace WindowsFormsApp2
             this.label9.TabIndex = 25;
             this.label9.Text = "Fecha de nacimiento";
             // 
-            // textBox2
+            // PatAddTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(1328, 201);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 105);
-            this.textBox2.TabIndex = 27;
+            this.PatAddTb.Location = new System.Drawing.Point(1328, 201);
+            this.PatAddTb.Multiline = true;
+            this.PatAddTb.Name = "PatAddTb";
+            this.PatAddTb.Size = new System.Drawing.Size(260, 105);
+            this.PatAddTb.TabIndex = 27;
             // 
             // label15
             // 
@@ -308,13 +311,13 @@ namespace WindowsFormsApp2
             this.label15.TabIndex = 26;
             this.label15.Text = "Correo";
             // 
-            // textBox3
+            // PatPhoneTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(643, 279);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 27);
-            this.textBox3.TabIndex = 29;
+            this.PatPhoneTb.Location = new System.Drawing.Point(643, 279);
+            this.PatPhoneTb.Multiline = true;
+            this.PatPhoneTb.Name = "PatPhoneTb";
+            this.PatPhoneTb.Size = new System.Drawing.Size(286, 27);
+            this.PatPhoneTb.TabIndex = 29;
             // 
             // label16
             // 
@@ -328,25 +331,25 @@ namespace WindowsFormsApp2
             this.label16.TabIndex = 28;
             this.label16.Text = "Telefono";
             // 
-            // comboBox2
+            // PatHIVCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.PatHIVCb.FormattingEnabled = true;
+            this.PatHIVCb.Items.AddRange(new object[] {
             "Positivo",
             "Negativo"});
-            this.comboBox2.Location = new System.Drawing.Point(750, 208);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(108, 21);
-            this.comboBox2.TabIndex = 30;
-            this.comboBox2.Text = "HIV";
+            this.PatHIVCb.Location = new System.Drawing.Point(750, 208);
+            this.PatHIVCb.Name = "PatHIVCb";
+            this.PatHIVCb.Size = new System.Drawing.Size(108, 21);
+            this.PatHIVCb.TabIndex = 30;
+            this.PatHIVCb.Text = "COVID";
             // 
-            // textBox4
+            // PatAlTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(1031, 201);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 105);
-            this.textBox4.TabIndex = 32;
+            this.PatAlTb.Location = new System.Drawing.Point(1031, 201);
+            this.PatAlTb.Multiline = true;
+            this.PatAlTb.Name = "PatAlTb";
+            this.PatAlTb.Size = new System.Drawing.Size(286, 105);
+            this.PatAlTb.TabIndex = 32;
             // 
             // label17
             // 
@@ -360,46 +363,98 @@ namespace WindowsFormsApp2
             this.label17.TabIndex = 31;
             this.label17.Text = "Alergias";
             // 
-            // dataGridView1
+            // AddBtn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(287, 446);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1327, 280);
-            this.dataGridView1.TabIndex = 33;
+            this.AddBtn.BackColor = System.Drawing.Color.Black;
+            this.AddBtn.ForeColor = System.Drawing.Color.White;
+            this.AddBtn.Location = new System.Drawing.Point(708, 359);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(176, 54);
+            this.AddBtn.TabIndex = 34;
+            this.AddBtn.Text = "Agregar";
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // button1
+            // DelBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(708, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 54);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DelBtn.ForeColor = System.Drawing.Color.White;
+            this.DelBtn.Location = new System.Drawing.Point(397, 356);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(176, 54);
+            this.DelBtn.TabIndex = 35;
+            this.DelBtn.Text = "Borrar";
+            this.DelBtn.UseVisualStyleBackColor = false;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
-            // button2
+            // EditBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(397, 356);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 54);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.EditBtn.ForeColor = System.Drawing.Color.DimGray;
+            this.EditBtn.Location = new System.Drawing.Point(1008, 356);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(176, 54);
+            this.EditBtn.TabIndex = 36;
+            this.EditBtn.Text = "Editar";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
-            // button3
+            // PatientsDGV
             // 
-            this.button3.BackColor = System.Drawing.Color.YellowGreen;
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(1008, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 54);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Borrar";
-            this.button3.UseVisualStyleBackColor = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.PatientsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.PatientsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PatientsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PatientsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PatientsDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.PatientsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PatientsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.PatientsDGV.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PatientsDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PatientsDGV.EnableHeadersVisualStyles = false;
+            this.PatientsDGV.GridColor = System.Drawing.Color.Black;
+            this.PatientsDGV.Location = new System.Drawing.Point(287, 483);
+            this.PatientsDGV.Name = "PatientsDGV";
+            this.PatientsDGV.RowHeadersVisible = false;
+            this.PatientsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PatientsDGV.Size = new System.Drawing.Size(1301, 228);
+            this.PatientsDGV.TabIndex = 103;
+            this.PatientsDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.PatientsDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.PatientsDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.PatientsDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.PatientsDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.PatientsDGV.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PatientsDGV.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.PatientsDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PatientsDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.PatientsDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientsDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.PatientsDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.PatientsDGV.ThemeStyle.HeaderStyle.Height = 25;
+            this.PatientsDGV.ThemeStyle.ReadOnly = false;
+            this.PatientsDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.PatientsDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.PatientsDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PatientsDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.PatientsDGV.ThemeStyle.RowsStyle.Height = 22;
+            this.PatientsDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            this.PatientsDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.PatientsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PatientsDGV_CellContentClick);
             // 
             // Patients
             // 
@@ -407,21 +462,21 @@ namespace WindowsFormsApp2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1626, 753);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.PatientsDGV);
+            this.Controls.Add(this.EditBtn);
+            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.PatAlTb);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.PatHIVCb);
+            this.Controls.Add(this.PatPhoneTb);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PatAddTb);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PatDOB);
+            this.Controls.Add(this.PatGenCb);
+            this.Controls.Add(this.PatNameTb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -440,7 +495,7 @@ namespace WindowsFormsApp2
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,21 +518,21 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PatNameTb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox PatGenCb;
+        private System.Windows.Forms.DateTimePicker PatDOB;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox PatAddTb;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PatPhoneTb;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox PatHIVCb;
+        private System.Windows.Forms.TextBox PatAlTb;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.Button DelBtn;
+        private System.Windows.Forms.Button EditBtn;
+        private Guna.UI2.WinForms.Guna2DataGridView PatientsDGV;
     }
 }

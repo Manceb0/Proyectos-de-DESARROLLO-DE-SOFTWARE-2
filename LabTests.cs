@@ -138,12 +138,12 @@ namespace WindowsFormsApp2
                 try
                 {
                     Con.Open();                                                                                     //DELETE
-                    SqlCommand cmd = new SqlCommand("DELETE FROM DoctorTbl where TestId=@TKey", Con);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM TestTbl where TestNum=@TKey", Con);
 
                     cmd.Parameters.AddWithValue("@TKey", Key);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Receptionist Deleted");
+                    MessageBox.Show("Test Deleted");
                     Con.Close();
                     DisplayTest();
                     Clear();

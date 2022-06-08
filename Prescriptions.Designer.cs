@@ -30,6 +30,9 @@ namespace WindowsFormsApp2
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prescriptions));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -43,26 +46,26 @@ namespace WindowsFormsApp2
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Print = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PatIdCb = new System.Windows.Forms.ComboBox();
+            this.PatNameTb = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DocIdCb = new System.Windows.Forms.ComboBox();
+            this.DocNameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TestIdCb = new System.Windows.Forms.ComboBox();
+            this.TestNameTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.MedicinesTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.CostTb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.PrescSumTxt = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.PrescriptionDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -70,8 +73,8 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescriptionDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -221,60 +224,54 @@ namespace WindowsFormsApp2
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // button2
+            // Print
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(331, 456);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 54);
-            this.button2.TabIndex = 99;
-            this.button2.Text = "Borrar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Print.ForeColor = System.Drawing.Color.White;
+            this.Print.Location = new System.Drawing.Point(1157, 435);
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(176, 54);
+            this.Print.TabIndex = 99;
+            this.Print.Text = "Imprimir";
+            this.Print.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(513, 456);
+            this.button1.Location = new System.Drawing.Point(400, 427);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 54);
+            this.button1.Size = new System.Drawing.Size(162, 54);
             this.button1.TabIndex = 98;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // PatIdCb
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 516);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1407, 199);
-            this.dataGridView1.TabIndex = 97;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.PatIdCb.FormattingEnabled = true;
+            this.PatIdCb.Items.AddRange(new object[] {
             "Urología",
             "Ginecología",
             "Cardiología",
             "Oftamología",
             "Dermatología",
             "Urología"});
-            this.comboBox2.Location = new System.Drawing.Point(273, 226);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(108, 21);
-            this.comboBox2.TabIndex = 94;
-            this.comboBox2.Text = "Paciente ID";
+            this.PatIdCb.Location = new System.Drawing.Point(273, 204);
+            this.PatIdCb.Name = "PatIdCb";
+            this.PatIdCb.Size = new System.Drawing.Size(108, 21);
+            this.PatIdCb.TabIndex = 94;
+            this.PatIdCb.Text = "Paciente ID";
+            this.PatIdCb.SelectionChangeCommitted += new System.EventHandler(this.PatIdCb_SelectionChangeCommitted);
             // 
-            // textBox3
+            // PatNameTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(400, 220);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 27);
-            this.textBox3.TabIndex = 93;
+            this.PatNameTb.Enabled = false;
+            this.PatNameTb.Location = new System.Drawing.Point(400, 198);
+            this.PatNameTb.Multiline = true;
+            this.PatNameTb.Name = "PatNameTb";
+            this.PatNameTb.Size = new System.Drawing.Size(286, 27);
+            this.PatNameTb.TabIndex = 93;
             // 
             // label16
             // 
@@ -282,32 +279,34 @@ namespace WindowsFormsApp2
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(395, 191);
+            this.label16.Location = new System.Drawing.Point(395, 169);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(225, 26);
             this.label16.TabIndex = 92;
             this.label16.Text = "Nombre del Paciente";
             // 
-            // comboBox1
+            // DocIdCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.DocIdCb.FormattingEnabled = true;
+            this.DocIdCb.Items.AddRange(new object[] {
             "Hombre ",
             "Mujer",
             "Otro"});
-            this.comboBox1.Location = new System.Drawing.Point(273, 140);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
-            this.comboBox1.TabIndex = 87;
-            this.comboBox1.Text = "Doctor ID";
+            this.DocIdCb.Location = new System.Drawing.Point(273, 140);
+            this.DocIdCb.Name = "DocIdCb";
+            this.DocIdCb.Size = new System.Drawing.Size(108, 21);
+            this.DocIdCb.TabIndex = 87;
+            this.DocIdCb.Text = "Doctor ID";
+            this.DocIdCb.SelectionChangeCommitted += new System.EventHandler(this.DocIdCb_SelectionChangeCommitted);
             // 
-            // textBox1
+            // DocNameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(400, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 27);
-            this.textBox1.TabIndex = 86;
+            this.DocNameTb.Enabled = false;
+            this.DocNameTb.Location = new System.Drawing.Point(400, 134);
+            this.DocNameTb.Multiline = true;
+            this.DocNameTb.Name = "DocNameTb";
+            this.DocNameTb.Size = new System.Drawing.Size(286, 27);
+            this.DocNameTb.TabIndex = 86;
             // 
             // label8
             // 
@@ -337,30 +336,33 @@ namespace WindowsFormsApp2
             this.pictureBox1.Size = new System.Drawing.Size(35, 32);
             this.pictureBox1.TabIndex = 82;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // comboBox3
+            // TestIdCb
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.TestIdCb.FormattingEnabled = true;
+            this.TestIdCb.Items.AddRange(new object[] {
             "Urología",
             "Ginecología",
             "Cardiología",
             "Oftamología",
             "Dermatología",
             "Urología"});
-            this.comboBox3.Location = new System.Drawing.Point(273, 289);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(108, 21);
-            this.comboBox3.TabIndex = 105;
-            this.comboBox3.Text = "Test ID";
+            this.TestIdCb.Location = new System.Drawing.Point(273, 267);
+            this.TestIdCb.Name = "TestIdCb";
+            this.TestIdCb.Size = new System.Drawing.Size(108, 21);
+            this.TestIdCb.TabIndex = 105;
+            this.TestIdCb.Text = "Test ID";
+            this.TestIdCb.SelectedIndexChanged += new System.EventHandler(this.TestIdCb_SelectedIndexChanged);
             // 
-            // textBox6
+            // TestNameTb
             // 
-            this.textBox6.Location = new System.Drawing.Point(400, 283);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(286, 27);
-            this.textBox6.TabIndex = 104;
+            this.TestNameTb.Enabled = false;
+            this.TestNameTb.Location = new System.Drawing.Point(400, 261);
+            this.TestNameTb.Multiline = true;
+            this.TestNameTb.Name = "TestNameTb";
+            this.TestNameTb.Size = new System.Drawing.Size(286, 27);
+            this.TestNameTb.TabIndex = 104;
             // 
             // label3
             // 
@@ -368,19 +370,19 @@ namespace WindowsFormsApp2
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(395, 254);
+            this.label3.Location = new System.Drawing.Point(395, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 26);
             this.label3.TabIndex = 103;
             this.label3.Text = "Test";
             // 
-            // textBox7
+            // MedicinesTb
             // 
-            this.textBox7.Location = new System.Drawing.Point(273, 361);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(286, 78);
-            this.textBox7.TabIndex = 107;
+            this.MedicinesTb.Location = new System.Drawing.Point(273, 339);
+            this.MedicinesTb.Multiline = true;
+            this.MedicinesTb.Name = "MedicinesTb";
+            this.MedicinesTb.Size = new System.Drawing.Size(286, 78);
+            this.MedicinesTb.TabIndex = 107;
             // 
             // label4
             // 
@@ -388,19 +390,19 @@ namespace WindowsFormsApp2
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(268, 332);
+            this.label4.Location = new System.Drawing.Point(268, 310);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 26);
             this.label4.TabIndex = 106;
             this.label4.Text = "Medicinas";
             // 
-            // textBox8
+            // CostTb
             // 
-            this.textBox8.Location = new System.Drawing.Point(565, 361);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(102, 27);
-            this.textBox8.TabIndex = 109;
+            this.CostTb.Location = new System.Drawing.Point(565, 339);
+            this.CostTb.Multiline = true;
+            this.CostTb.Name = "CostTb";
+            this.CostTb.Size = new System.Drawing.Size(102, 27);
+            this.CostTb.TabIndex = 109;
             // 
             // label5
             // 
@@ -408,19 +410,19 @@ namespace WindowsFormsApp2
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(560, 332);
+            this.label5.Location = new System.Drawing.Point(560, 310);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 26);
             this.label5.TabIndex = 108;
             this.label5.Text = "Costo";
             // 
-            // richTextBox1
+            // PrescSumTxt
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(824, 134);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(752, 326);
-            this.richTextBox1.TabIndex = 110;
-            this.richTextBox1.Text = "";
+            this.PrescSumTxt.Location = new System.Drawing.Point(807, 103);
+            this.PrescSumTxt.Name = "PrescSumTxt";
+            this.PrescSumTxt.Size = new System.Drawing.Size(752, 326);
+            this.PrescSumTxt.TabIndex = 110;
+            this.PrescSumTxt.Text = "";
             // 
             // label2
             // 
@@ -428,11 +430,67 @@ namespace WindowsFormsApp2
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Montserrat ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(855, 105);
+            this.label2.Location = new System.Drawing.Point(838, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 26);
             this.label2.TabIndex = 111;
             this.label2.Text = "PRESCRIPCION";
+            // 
+            // PrescriptionDGV
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.PrescriptionDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.PrescriptionDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PrescriptionDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PrescriptionDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PrescriptionDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.PrescriptionDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PrescriptionDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.PrescriptionDGV.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PrescriptionDGV.DefaultCellStyle = dataGridViewCellStyle12;
+            this.PrescriptionDGV.EnableHeadersVisualStyles = false;
+            this.PrescriptionDGV.GridColor = System.Drawing.Color.Black;
+            this.PrescriptionDGV.Location = new System.Drawing.Point(273, 501);
+            this.PrescriptionDGV.Name = "PrescriptionDGV";
+            this.PrescriptionDGV.RowHeadersVisible = false;
+            this.PrescriptionDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PrescriptionDGV.Size = new System.Drawing.Size(1288, 201);
+            this.PrescriptionDGV.TabIndex = 112;
+            this.PrescriptionDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.PrescriptionDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.PrescriptionDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.PrescriptionDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.PrescriptionDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.PrescriptionDGV.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.PrescriptionDGV.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.PrescriptionDGV.ThemeStyle.HeaderStyle.Height = 25;
+            this.PrescriptionDGV.ThemeStyle.ReadOnly = false;
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.Height = 22;
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            this.PrescriptionDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // Prescriptions
             // 
@@ -440,25 +498,25 @@ namespace WindowsFormsApp2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1610, 714);
+            this.Controls.Add(this.PrescriptionDGV);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.PrescSumTxt);
+            this.Controls.Add(this.CostTb);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.MedicinesTb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TestIdCb);
+            this.Controls.Add(this.TestNameTb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Print);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.PatIdCb);
+            this.Controls.Add(this.PatNameTb);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DocIdCb);
+            this.Controls.Add(this.DocNameTb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -473,8 +531,8 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrescriptionDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,25 +553,25 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Print;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox PatIdCb;
+        private System.Windows.Forms.TextBox PatNameTb;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox DocIdCb;
+        private System.Windows.Forms.TextBox DocNameTb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox TestIdCb;
+        private System.Windows.Forms.TextBox TestNameTb;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox MedicinesTb;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox CostTb;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox PrescSumTxt;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2DataGridView PrescriptionDGV;
     }
 }

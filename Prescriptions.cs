@@ -42,7 +42,8 @@ namespace WindowsFormsApp2
             DocIdCb.SelectedIndex = 0;
             PatIdCb.SelectedIndex = 0;
             TestIdCb.SelectedIndex = 0;
-
+            CostTb.Text = "";
+            MedicinesTb.Text = "";
             PatNameTb.Text = "";
             DocNameTb.Text = "";
             TestNameTb.Text = "";
@@ -86,7 +87,7 @@ namespace WindowsFormsApp2
 
         private void GetTests()
         {
-            Con.Open();
+            /*Con.Open();
 
             string Query = "Select * from TestTbl where TestNum=" + TestIdCb.SelectedValue.ToString() + "";
             SqlCommand cmd = new SqlCommand(Query, Con);
@@ -100,7 +101,7 @@ namespace WindowsFormsApp2
             }
 
 
-            Con.Close();
+            Con.Close();*/
         }
 
         
@@ -223,6 +224,26 @@ namespace WindowsFormsApp2
                     MessageBox.Show(Ex.Message);
                 }
             }
+        }
+
+        private void PrescriptionDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PrescSumTxt.Text = "";
+            PrescSumTxt.Text = "                 CLINICA INTEC\n\n " + "                  DESCRIPCION             " + "\n*******************************************" + "\n" + DateTime.Today.Date + "\n\n\n      Doctor: " + PrescriptionDGV.SelectedRows[0].Cells[2].Value.ToString() + "                     Paciente: " + PrescriptionDGV.SelectedRows[0].Cells[4].Value.ToString() + "\n\n\n Test:" + PrescriptionDGV.SelectedRows[0].Cells[6].Value.ToString() + "           " + "     Medicinas: " + PrescriptionDGV.SelectedRows[0].Cells[7].Value.ToString() + "\n\n\n\n                   CLINICA INTEC";                                           
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            if(printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(PrescSumTxt.Text + "\n", new Font("Averia", 18, FontStyle.Regular), Brushes.Black, new Point(95, 80));
+            e.Graphics.DrawString("\n\t" + "DOCUMENTO CLINICA INTEC 2022", new Font("Averia", 15, FontStyle.Bold), Brushes.Red, new Point(200,300));
         }
     }
 }

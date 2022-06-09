@@ -132,6 +132,7 @@ namespace WindowsFormsApp2
             this.PassTb.Name = "PassTb";
             this.PassTb.Size = new System.Drawing.Size(286, 27);
             this.PassTb.TabIndex = 6;
+            this.PassTb.TextChanged += new System.EventHandler(this.PassTb_TextChanged);
             // 
             // pictureBox1
             // 

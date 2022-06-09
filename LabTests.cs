@@ -130,7 +130,7 @@ namespace WindowsFormsApp2
         {
             if (Key == 0)
             {
-                MessageBox.Show("Select the Lab Test ");
+                MessageBox.Show("Selecciona el Lab Test ");
 
             }
             else

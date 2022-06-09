@@ -31,6 +31,7 @@ namespace WindowsFormsApp2
         }
 
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Yuli.YULIMANUEL\Documents\ClinicDb.mdf;Integrated Security=True;Connect Timeout=30");
+        public static string Role;
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
@@ -45,6 +46,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Faltan campos por llenar");
                 }else if(UnameTb.Text == "Admin" && PassTb.Text == "Password" )
                 {
+                    
                     Patients Obj = new Patients();
                     Obj.Show();
                     this.Hide();
@@ -114,6 +116,11 @@ namespace WindowsFormsApp2
                     Con.Close();
                 }
             }
+        }
+
+        private void PassTb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,11 +37,11 @@ namespace WindowsFormsApp2
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.RoleCb = new System.Windows.Forms.ComboBox();
+            this.UnameTb = new System.Windows.Forms.TextBox();
+            this.PassTb = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,7 @@ namespace WindowsFormsApp2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(83, 24);
+            this.label1.Location = new System.Drawing.Point(113, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 22);
             this.label1.TabIndex = 1;
@@ -106,31 +106,32 @@ namespace WindowsFormsApp2
             this.label3.TabIndex = 3;
             this.label3.Text = "Contraseña";
             // 
-            // comboBox1
+            // RoleCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.RoleCb.FormattingEnabled = true;
+            this.RoleCb.Items.AddRange(new object[] {
             "Admin",
             "Doctor",
             "Recepcionista"});
-            this.comboBox1.Location = new System.Drawing.Point(86, 195);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 30);
-            this.comboBox1.TabIndex = 4;
+            this.RoleCb.Location = new System.Drawing.Point(86, 195);
+            this.RoleCb.Name = "RoleCb";
+            this.RoleCb.Size = new System.Drawing.Size(226, 30);
+            this.RoleCb.TabIndex = 4;
+            this.RoleCb.SelectedIndexChanged += new System.EventHandler(this.RoleCb_SelectedIndexChanged);
             // 
-            // textBox1
+            // UnameTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 27);
-            this.textBox1.TabIndex = 5;
+            this.UnameTb.Location = new System.Drawing.Point(56, 264);
+            this.UnameTb.Name = "UnameTb";
+            this.UnameTb.Size = new System.Drawing.Size(286, 27);
+            this.UnameTb.TabIndex = 5;
             // 
-            // textBox2
+            // PassTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 339);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 27);
-            this.textBox2.TabIndex = 6;
+            this.PassTb.Location = new System.Drawing.Point(56, 339);
+            this.PassTb.Name = "PassTb";
+            this.PassTb.Size = new System.Drawing.Size(286, 27);
+            this.PassTb.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -142,16 +143,17 @@ namespace WindowsFormsApp2
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // LoginBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(151, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.LoginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LoginBtn.ForeColor = System.Drawing.Color.White;
+            this.LoginBtn.Location = new System.Drawing.Point(151, 404);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(102, 36);
+            this.LoginBtn.TabIndex = 8;
+            this.LoginBtn.Text = "Login";
+            this.LoginBtn.UseVisualStyleBackColor = false;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // label4
             // 
@@ -163,6 +165,7 @@ namespace WindowsFormsApp2
             this.label4.Size = new System.Drawing.Size(63, 22);
             this.label4.TabIndex = 9;
             this.label4.Text = "Borrar";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Login
             // 
@@ -171,11 +174,11 @@ namespace WindowsFormsApp2
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(418, 497);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.PassTb);
+            this.Controls.Add(this.UnameTb);
+            this.Controls.Add(this.RoleCb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -200,15 +203,15 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox PassTb;
+        private System.Windows.Forms.TextBox UnameTb;
+        private System.Windows.Forms.ComboBox RoleCb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoginBtn;
     }
 }
 

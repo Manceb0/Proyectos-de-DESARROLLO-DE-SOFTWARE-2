@@ -125,6 +125,7 @@ namespace WindowsFormsApp2
             this.UnameTb.Name = "UnameTb";
             this.UnameTb.Size = new System.Drawing.Size(286, 27);
             this.UnameTb.TabIndex = 5;
+            this.UnameTb.TextChanged += new System.EventHandler(this.UnameTb_TextChanged);
             // 
             // PassTb
             // 

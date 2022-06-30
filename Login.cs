@@ -122,5 +122,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void UnameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
